@@ -45,7 +45,7 @@ Solve Exercise 4 here:
 
 game.selectStarter=function(starterIndex){
         if(pokemon[starterIndex].starter){
-            game.party.push([pokemon[starterIndex]]);
+            game.party.push(pokemon[starterIndex]);
             console.log(game.party);
             
             console.log("successfully added the starter pokemon to your party");
@@ -106,8 +106,8 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-
-    game.party.splice(0,1, pokemon[1]);
+    let inx = pokemon.indexOf(game.party[0]);
+    game.party.splice(0,1, pokemon[inx+1]);
     console.log("starer pokemon evolved");
     
     console.log(game.party);
@@ -121,7 +121,8 @@ Solve Exercise 8 here:
 */
 
     for(let i=0;i<game.party.length;i++){
-        console.log(game.party[i].name)
+        console.log(game.party[i].name);
+        
     }
 
 /*
